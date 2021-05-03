@@ -51,6 +51,23 @@ print('Лампа -', lamps_quantity, 'шт, стоимость', lamps_cost, '�
 
 # TODO здесь ваш код
 
+code_table = goods['Стол']
+code_sofa = goods['Диван']
+code_chair = goods['Стул']
+
+quantity_table = store[code_table][0]['quantity'] + store[code_table][1]['quantity']
+quantity_sofa = store[code_sofa][0]['quantity'] + store[code_sofa][1]['quantity']
+quantity_chair = store[code_chair][0]['quantity'] + store[code_chair][1]['quantity'] + store[code_chair][2]['quantity']
+
+sum_table = (store[code_table][0]['quantity'] * store[code_table][0]['price']) + (store[code_table][1]['quantity'] * store[code_table][1]['price'])
+sum_sofa = (store[code_sofa][0]['quantity'] * store[code_sofa][0]['price']) + (store[code_sofa][1]['quantity'] * store[code_sofa][1]['price'])
+sum_chair = (store[code_chair][0]['quantity'] * store[code_chair][0]['price']) + (store[code_chair][1]['quantity'] * store[code_chair][1]['price']) + (store[code_chair][2]['quantity'] * store[code_chair][2]['price'])
+
+print(f'Стол - {quantity_table} шт, стоимость {sum_table} руб')
+print(f'Диван - {quantity_sofa} шт, стоимость {sum_sofa} руб')
+print(f'Стул - {quantity_chair} шт, стоимость {sum_chair} руб')
+
+
 ##########################################################################################
 # ВНИМАНИЕ! После того как __ВСЯ__ домашняя работа сделана и запушена на сервер,         #
 # нужно зайти в ЛМС (LMS - Learning Management System ) по адресу http://go.skillbox.ru  #
